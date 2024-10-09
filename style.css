@@ -1,8 +1,11 @@
-*{
+/* Global settings */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-body{
+
+body {
     background-image: url('background-img.jpg');
     image-rendering: optimizeSpeed;
     background-repeat: no-repeat;
@@ -10,11 +13,13 @@ body{
     background-size: cover;
     background-color: rgba(0, 0, 0, 0.835);
 }
-img{
+
+img {
     float: right;
     position: relative;
     top: 87px;
 }
+
 header {
     position: sticky;
     top: 0;
@@ -22,25 +27,29 @@ header {
     background-color: #00000017;
     z-index: 1;
 }
-nav{
+
+nav {
     padding: 20px;
 }
+
 nav ul {
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
+
 nav ul li {
     list-style: none;
     font-size: 20px;
     color: rgb(239, 236, 236);
     font-family: Poppins, sans-serif;
-    
 }
+
 nav ul li a {
     text-decoration: none;
     color: white;
 }
+
 .content {
     font-family: "Poppins", system-ui;
     font-weight: 100;
@@ -51,17 +60,15 @@ nav ul li a {
     margin: 0px;
     height: 100px;
 }
+
 .content p {
     padding: 16px 0px 0px 8px;
 }
 
-/* Global settings */
-* {
-    box-sizing: border-box;
-}
 section#home {
     padding: 63px 0vw;
 }
+
 section {
     padding: 60px 10vw;
     color: white;
@@ -207,4 +214,66 @@ section {
 
 .Contact .social ul li a:hover {
     color: #ffffff;
+}
+
+/* Media Query for mobile devices */
+@media (max-width: 768px) {
+    header {
+        padding-left: 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+
+    .content {
+        font-size: 1.8em;
+        padding: 100px 5vw;
+    }
+
+    .content img {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        float: none;
+        top: 0;
+    }
+
+    section {
+        padding: 20px 5vw;
+    }
+
+    .About h2, .Experience h2, .Projects h2, .Contact h2 {
+        font-size: 2.5em;
+    }
+
+    .About p, .Experience p, .Projects p, .Contact p {
+        font-size: 1em;
+    }
+
+    .Experience h3, .Projects h3 {
+        font-size: 1.5em;
+    }
+
+    .Projects a {
+        font-size: 1em;
+    }
+
+    .Contact h2 {
+        font-size: 2.5em;
+    }
+
+    .Contact ul li {
+        font-size: 1.1em;
+    }
+
+    .Contact .social ul li a {
+        font-size: 1.5em;
+    }
 }
