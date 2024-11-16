@@ -9,31 +9,43 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
         </style>
+        
+        
 </head>
 <body>
     <header>
 
         <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <div class="nav-container">
+                <!-- Hamburger Icon -->
+                <div class="hamburger" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <!-- Navigation Links -->
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
         </nav>
+        
     </header>
 
     <main>
         <section id="home" class="Home">
-            <div class="image">
-                <img  src="Main image.jpg" alt="" width="400">
-                
-            </div>
-            <div class="content">
+           <div class="content">
                     <h1>Tanishq Deepak Kokane</h1>
-                    <p>I am an AI Enthusisast</p>
+                    <p>Developer</p>
     
+            </div>
+            <div class="pro_image">
+                <img  src="Main image.jpg" alt="" width="400px">
+                
             </div>
             
         </section>
@@ -118,5 +130,11 @@
     <footer>
 
     </footer>
+    <script>
+            function toggleMenu() {
+                const navLinks = document.querySelector('.nav-links');
+                navLinks.classList.toggle('show');
+            }
+        </script>
 </body>
 </html>
