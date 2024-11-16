@@ -5,6 +5,23 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+/* Initial state of elements to be animated */
+.fade-in {
+    opacity: 0;
+    transform: translateY(80px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Active state when the element is in view */
+.fade-in.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 body {
     background-image: url('background-img.jpg');
     image-rendering: optimizeSpeed;
@@ -29,12 +46,12 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding-left: 50vw;
+    /* padding-left: 50vw; */
     background-color: rgba(0, 0, 0, 0.15);
     z-index: 10;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -64,7 +81,20 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #00ffcc; /* Highlight color on hover */
+    color: #00ffcc;
+    /* Highlight color on hover */
+}
+
+.nav-container {
+    display: flex;
+    gap: 10rem;
+}
+
+.logo {
+    font-size: 1em;
+    margin: 14px;
+    font-weight: 600;
+    color: white;
 }
 
 /* Hamburger Menu */
@@ -105,7 +135,7 @@ section#home {
 
 .content h1 {
     font-size: 1.7em;
-   
+
 }
 
 .content p {
@@ -116,7 +146,7 @@ section#home {
 .pro_image {
     flex: 1;
     display: flex;
-    justify-content:flex-end;
+    justify-content: flex-end;
 }
 
 .pro_image img {
@@ -265,10 +295,104 @@ section#home {
     color: #ffffff;
 }
 
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('background-img.jpg');
+    image-rendering: optimizeSpeed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.835);
+    font-family: "Poppins", sans-serif;
+    color: azure;
+}
+
+/* Header Styles */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.15);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 0 20px;
+}
+
+/* Navigation Styles */
+nav {
+    width: 100%;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: white;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    background: white;
+    height: 3px;
+    width: 25px;
+    margin: 4px 0;
+    border-radius: 3px;
+    transition: all 0.3s;
+}
+
+/* Navigation Links */
+nav ul {
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #00ffcc;
+}
+
+/* Responsive Styles */
+
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
     header {
         padding-left: 0;
+    }
+
+    nav .nav-container .hamburger {
+        transform: translateX(3vw);
     }
 
     nav ul {
@@ -292,8 +416,52 @@ section#home {
         display: flex;
     }
 
+    .nav-container {
+        justify-content: space-between;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hamburger {
+        z-index: 20;
+        /* Ensure it appears above other elements */
+        position: relative;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        text-align: center;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        padding: 10px 0;
+    }
+
     section {
         padding: 20px 5vw;
+    }
+
+
+
+    .Home {
+        flex-direction: column-reverse;
+    }
+
+    .Home .content {
+        font-size: 1rem;
+        text-align: center;
     }
 
     .content {
@@ -302,18 +470,26 @@ section#home {
     }
 
     .pro_image img {
-        width: 80%;
+        width: 70%;
+        margin: 0 auto;
     }
 
-    .About h2, .Experience h2, .Projects h2, .Contact h2 {
+    .About h2,
+    .Experience h2,
+    .Projects h2,
+    .Contact h2 {
         font-size: 2.5em;
     }
 
-    .About p, .Experience p, .Projects p, .Contact p {
+    .About p,
+    .Experience p,
+    .Projects p,
+    .Contact p {
         font-size: 1em;
     }
 
-    .Experience h3, .Projects h3 {
+    .Experience h3,
+    .Projects h3 {
         font-size: 1.5em;
     }
 
@@ -327,5 +503,11 @@ section#home {
 
     .Contact .social ul li a {
         font-size: 1.5em;
+    }
+}
+
+@media (max-width:425px) {
+    nav .nav-container .logo h1 {
+        font-size: 1rem;
     }
 }
